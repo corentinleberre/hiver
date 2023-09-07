@@ -16,7 +16,7 @@
 }
 
 .radio-button:hover {
-  background-color: #F5F8FA;
+  background-color: #f5f8fa;
 }
 
 .radio-button input[type="radio"] {
@@ -24,7 +24,7 @@
 }
 
 .radio-button.selected {
-  border-color: #1DA1F2;
+  border-color: #1da1f2;
 }
 
 .radio-button img {

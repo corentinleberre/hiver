@@ -3,9 +3,10 @@ import "./popup.css"
 import TwitterSvg from "react:~/assets/svg/twitter.svg"
 import HiveSvg from "react:~/assets/svg/hive.svg"
 import BlackTwitterSvg from "react:~/assets/svg/black.svg"
+import type { LogoType } from "~types"
 
 const IndexPopup = () => {
-  const [logo, setLogo] = useStorage("logo", "original")
+  const [logo, setLogo] = useStorage<LogoType>("logo", "original")
 
   const onOptionChange = (e) => setLogo(e.target.value)
 

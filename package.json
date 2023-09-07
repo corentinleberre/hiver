@@ -4,30 +4,30 @@
   "version": "0.0.1",
   "description": "A basic Plasmo extension.",
   "author": "corentinleberre",
-  "packageManager": "pnpm@8.5.1",
   "scripts": {
     "dev": "plasmo dev",
     "build": "plasmo build",
     "package": "plasmo package"
   },
   "dependencies": {
-    "plasmo": "0.69.3",
+    "plasmo": "0.82.5",
     "react": "18.2.0",
     "react-dom": "18.2.0"
   },
   "devDependencies": {
-    "@types/chrome": "0.0.227",
+    "@types/chrome": "0.0.245",
     "@types/node": "18.15.11",
-    "@types/react": "18.0.32",
-    "@types/react-dom": "18.0.11",
-    "prettier": "3.0.1",
-    "typescript": "5.0.3",
+    "@types/react": "18.2.21",
+    "@types/react-dom": "18.2.7",
+    "prettier": "3.0.3",
+    "typescript": "5.2.2",
     "@plasmohq/prettier-plugin-sort-imports": "4.0.1",
     "@plasmohq/storage": "1.7.2"
   },
   "manifest": {
     "host_permissions": [
-      "https://*/*"
+      "https://twitter.com/*",
+      "https://x.com/*"
     ],
     "permissions": [
       "storage",

@@ -1,27 +1,8 @@
 import type { PlasmoRender } from "plasmo"
 import { createRoot } from "react-dom/client"
-import { useStorage } from "@plasmohq/storage/hook"
-import TwitterSvg from "react:~/assets/svg/twitter.svg"
-import HiveSvg from "react:~/assets/svg/hive.svg"
-import BlackTwitterSvg from "react:~/assets/svg/black.svg"
+import { DisplaySvg } from "~DisplaySvg"
 
-const TwitterLogo = (props: { logo: string }) => {
-  switch (props.logo) {
-    case "original":
-      return <TwitterSvg />
-    case "black":
-      return <BlackTwitterSvg />
-    case "hive":
-      return <HiveSvg />
-  }
-}
-
-const DisplaySvg = () => {
-  const [logo] = useStorage("logo", "original")
-  return <TwitterLogo logo={logo} />
-}
-
-// This function overrides the default `createRootContainer`
+// This function overrides the default `createRootContainer` passed to the render function
 export const getRootContainer = (): Promise<Element> =>
   new Promise((resolve) => {
     const checkInterval = setInterval(() => {
@@ -33,9 +14,8 @@ export const getRootContainer = (): Promise<Element> =>
     })
   })
 
-export const render: PlasmoRender = async ({
-  createRootContainer // This creates the default root container
-}) => {
+// This creates the default root container
+export const render: PlasmoRender = async ({ createRootContainer }) => {
   const rootContainer = await createRootContainer()
   const root = createRoot(rootContainer)
   root.render(<DisplaySvg />)
